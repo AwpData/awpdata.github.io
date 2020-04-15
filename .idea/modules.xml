@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AwpData.github.io.iml" filepath="$PROJECT_DIR$/.idea/AwpData.github.io.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Projects/.idea/Projects.iml" filepath="$PROJECT_DIR$/../Projects/.idea/Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../missingLinks/.idea/missingLinks.iml" filepath="$PROJECT_DIR$/../missingLinks/.idea/missingLinks.iml" />
     </modules>
   </component>
 </project>
