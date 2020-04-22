@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8"/>
     <meta name="description" content="HTML/CSS/Js Projects"/>
     <title>My Website to Showcase Projects</title>
+    <link href="text.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<div id="Projects">
-    <!-- Replace all formatting attributes with CSS soon -->
-    <h1 style="font-family:Calibri,serif" align="center">My Web Development Projects</h1>
-    <hr/>
 
-    <!-- Remove attributes later and use CSS when ready -->
-    <div class="table">
-        <table border="2" bgcolor="#f0fff0" cellpadding="10" align="center">
+<body>
+
+<header>
+    <h1>My Web Development Projects</h1>
+    <hr/>
+</header>
+
+<main>
+    <section>
+        <table>
             <tr>
                 <th scope="col">Assignment</th>
                 <th scope="col">Completed</th>
                 <th scope="col">Graded</th>
             </tr>
             <tr>
-                <td><a href="WhaleShark.html" style="font-family:Calibri,serif">Favorite Animal Assignment</a></td>
-                <td align="center">✔</td>
-                <td align="center">✔</td>
+                <td class="hoverable"><a href="completed/WhaleShark.html">Favorite Animal Assignment</a></td>
+                <td>✔</td>
+                <td>✔</td>
             </tr>
             <tr>
-                <td><a href="missingLinks/index.html" style="font-family:Calibri,serif">Missing Links Assignment</a>
+                <td class="hoverable"><a href="completed/missingLinks/index.html">Missing Links Assignment</a>
                 </td>
-                <td align="center">✔</td>
-                <td align="center"></td>
+                <td>✔</td>
+                <td></td>
             </tr>
         </table>
-    </div>
+    </section>
+</main>
 
-</div>
 </body>
 </html>

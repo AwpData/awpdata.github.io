@@ -6,5 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="missingLinks" />
     <orderEntry type="module" module-name="ChefGustausQuiz" />
+    <orderEntry type="module" module-name="HTMLexamples" />
+    <orderEntry type="module" module-name="cssExamples1" />
   </component>
 </module>
