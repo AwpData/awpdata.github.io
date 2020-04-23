@@ -13,34 +13,19 @@
 
 /* Box-model from: https://www.w3schools.com/css/css_boxmodel.asp */
 
-
 table {
-    border-collapse: collapse;
-    background-color: seashell;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-body {
     margin-left: 100px;
     margin-right: 100px;
+    border-collapse: collapse;
 }
 
 th, tr, td {
-    border: 2px solid black;
     padding: 10px;
+    border: 2px solid black;
+    background-color: seashell;
 }
 
 th {
-    background-color: gold;
+    background-color: khaki;
 }
-
-.hoverable:hover {
-    background-color: white;
-}
-
-a:hover {
-    color: red;
-}
-
 
