@@ -11,8 +11,6 @@
     margin: 10px;
 }
 
-/* Box-model from: https://www.w3schools.com/css/css_boxmodel.asp */
-
 table {
     border-collapse: collapse;
     background-color: seashell;

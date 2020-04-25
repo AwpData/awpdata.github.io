@@ -12,6 +12,10 @@
     margin: 10px;
 }
 
+a:hover {
+    color: red;
+}
+
 /* Box-model from: https://www.w3schools.com/css/css_boxmodel.asp */
 
 table {
