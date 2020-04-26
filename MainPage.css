@@ -33,7 +33,7 @@ th {
 }
 
 .hoverable:hover {
-    background-color: white;
+    border: 3px solid black;
 }
 
 a:hover {
