@@ -32,8 +32,29 @@ th {
     background-color: gold;
 }
 
+.hoverable {
+    padding-bottom: 10px;
+    transition: padding-bottom 1s ease;
+}
+
 .hoverable:hover {
-    border: 3px solid black;
+    padding-bottom: 50px;
+}
+
+/*td.hoverable > p{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s ease;
+}
+
+td.hoverable > p:hover {
+    visibility: visible;
+    opacity: 1;
+}*/
+
+a {
+    color:purple;
+    transition: color 1s ease;
 }
 
 a:hover {
