@@ -1,5 +1,5 @@
 * {
-    font-family: Helvetica;
+    font-family: Helvetica, serif;
     text-align: center;
 }
 
@@ -7,8 +7,38 @@
     width: auto;
     border: 2px solid black;
     background-color: seashell;
-    padding: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
     margin: 10px;
+}
+
+h1 {
+    font-family: Gravity, serif;
+    letter-spacing: 1px;
+    font-size: 45px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    background: linear-gradient(to right, red, darkorange, yellow, green, blue, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%, 100% {
+        background-position: 0;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+}
+
+/* https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css */
+
+body {
+    background: snow;
 }
 
 table {
@@ -33,27 +63,18 @@ th {
 }
 
 .hoverable {
-    padding-bottom: 10px;
-    transition: padding-bottom 1s ease;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: padding-left 1s ease, padding-right 1s ease;
 }
 
 .hoverable:hover {
-    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
-
-/*td.hoverable > p{
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 1s ease;
-}
-
-td.hoverable > p:hover {
-    visibility: visible;
-    opacity: 1;
-}*/
 
 a {
-    color:purple;
+    color: purple;
     transition: color 1s ease;
 }
 
