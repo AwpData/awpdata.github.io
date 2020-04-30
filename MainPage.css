@@ -42,6 +42,34 @@ body {
     margin-right: 100px;
 }
 
+div.square {
+    height: 100px;
+    width: 100px;
+    background: snow;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    padding-right: 50px;
+    animation: left_right 5s linear reverse;
+}
+
+p.square {
+    position: fixed;
+    margin-left: 650px;
+    margin-top: 75px;
+}
+
+@keyframes left_right {
+    0% {
+        left: 0;
+        background: snow;
+    }
+    100% {
+        left: 175px;
+        background: transparent;
+    }
+}
+
 table {
     border-collapse: collapse;
     background-color: seashell;
