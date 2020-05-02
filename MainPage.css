@@ -48,11 +48,9 @@ main {
 }
 
 p.hide {
-    position: fixed;
-    margin-left: 610px;
-    margin-top: 75px;
+    padding: 10px;
     opacity: 1.0;
-    animation: change_opacity 4s linear forwards;
+    animation: change_opacity 10s ease-out forwards;
 }
 
 @keyframes change_opacity {
