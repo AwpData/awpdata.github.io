@@ -1,6 +1,7 @@
 * {
     font-family: Helvetica, serif;
     text-align: center;
+    text-decoration: none;
 }
 
 .box {
@@ -102,7 +103,7 @@ a { /* It flashes red to black (EXPERIMENTAL) */
 }
 
 a:hover {
-    color: red;
+    color: blue;
 }
 
 
