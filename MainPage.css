@@ -1,5 +1,6 @@
 * {
-    font-family: Helvetica, serif;
+    font-family: Helvetica, Ariel, serif;
+    font-size: 18px;
     text-align: center;
     text-decoration: none;
 }
@@ -10,15 +11,15 @@
     background-color: lemonchiffon;
     padding-left: 1px;
     padding-right: 1px;
-    margin: 10px;
+    margin: auto;
 }
 
 h1.rainbow {
-    font-family: Gravity, serif;
-    font-size: 50px;
+    font-family: Gravity, Helvetica, serif;
+    font-size: 48px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
-    background: linear-gradient(to right, red, darkorange, yellow, green, blue, violet);
+    background: linear-gradient(to right, red, orange, yellow, green, blue, violet);
     -webkit-background-clip: text;
     color: transparent;
     animation: text_gradient_effect 6s ease-in-out infinite;
@@ -73,6 +74,7 @@ table {
 th, tr, td {
     border: 2px solid black;
     padding: 10px;
+    font-weight: bold;
 }
 
 th {
@@ -92,7 +94,6 @@ th {
 
 a { /* It flashes red to black (EXPERIMENTAL) */
     font-family: Helvetica, serif;
-    font-size: 20px;
     background: linear-gradient(to right, red, black);
     -webkit-background-clip: text;
     color: transparent;
