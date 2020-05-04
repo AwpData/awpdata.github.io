@@ -10,7 +10,7 @@ html {
     border-left: 200px solid lightgrey;
     border-right: 200px solid lightgrey;
     height: 1000px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .box {
