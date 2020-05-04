@@ -5,13 +5,24 @@
     text-decoration: none;
 }
 
-.box {
+html {
     width: auto;
-    border: 2px solid black;
-    background-color: lemonchiffon;
+    border-left: 200px solid lightgrey;
+    border-right: 200px solid lightgrey;
+    height: 1000px;
+    overflow: hidden;
+}
+
+.box {
+    width: 1000px;
+    border: 2px solid #000000;
+    background-color: papayawhip;
     padding-left: 1px;
     padding-right: 1px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 0 0 5px 2px lightgrey;
+    -webkit-border-radius: 10px;
 }
 
 h1.rainbow {
