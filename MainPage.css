@@ -92,17 +92,6 @@ th {
     background-color: gold;
 }
 
-.hoverable {
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: padding-left 1s ease, padding-right 1s ease;
-}
-
-.hoverable:hover {
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
 a { /* It flashes red to black (EXPERIMENTAL) */
     font-family: Helvetica, serif;
     background: linear-gradient(to right, red, black);

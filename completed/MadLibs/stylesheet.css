@@ -1,0 +1,15 @@
+* {
+    font-family: Helvetica, Ariel, serif;
+    text-align: center;
+}
+
+.box {
+    vertical-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    border: 2px solid #000000;
+    background-color: papayawhip;
+}
+
+
