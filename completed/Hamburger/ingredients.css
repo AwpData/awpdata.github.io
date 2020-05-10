@@ -60,14 +60,6 @@
     border-bottom: solid 10px rgba(0, 0, 0, .2);
 }
 
-.patty3 { /* change this up (it is the same as patty2) */
-    height: 30px;
-    width: 60%;
-    background: #42220b;
-    border-radius: 30px;
-    border-bottom: solid 10px rgba(0, 0, 0, .2);
-}
-
 .pickle {
     height: 30px;
     width: 50%;
