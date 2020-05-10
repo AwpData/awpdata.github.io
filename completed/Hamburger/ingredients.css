@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.bun-top {
+    height: 55px;
+    width: 60%;
+    background: sandybrown;
+    border-radius: 100px 100px 20px 20px;
+    border-bottom: solid 10px rgba(0, 0, 0, .1);
+}
+
+/* I made this condiment */
+.lettuce {
+    height: 5px;
+    width: 70%;
+    background: green;
+    border-radius: 30px 30px 0 0;
+    border-top: solid 5px rgba(0, 0, 0, .1);
+    border-bottom: solid 5px rgba(0, 0, 0, .1);
+}
+
+.cheese {
+    height: 10px;
+    width: 55%;
+    background: #f2c120;
+    border-bottom: solid 2px rgba(0, 0, 0, .1);
+    border-radius: 10px 10px 5px 5px;
+}
+
+.tomato {
+    height: 15px;
+    width: 50%;
+    background-color: #dd3710;
+    border-bottom: solid 2px rgba(0, 0, 0, .1);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.meatball {
+    height: 60px;
+    width: 70px;
+    background: #74380d;
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.patty {
+    height: 50px;
+    width: 60%;
+    background: #42220b;
+    border-radius: 15px;
+    border-bottom: solid 10px rgba(0, 0, 0, .2);
+}
+
+.patty2 {
+    height: 30px;
+    width: 60%;
+    background: #2d1607;
+    border-radius: 30px;
+    border-bottom: solid 10px rgba(0, 0, 0, .2);
+}
+
+.patty3 { /* change this up (it is the same as patty2) */
+    height: 30px;
+    width: 60%;
+    background: #42220b;
+    border-radius: 30px;
+    border-bottom: solid 10px rgba(0, 0, 0, .2);
+}
+
+.pickle {
+    height: 30px;
+    width: 50%;
+    background: #1db801;
+    border-radius: 0 0 100px 100px;
+    border-top: solid 3px #25e303;
+    border-bottom: solid 10px #138902;
+}
+
+.onion {
+    height: 5px;
+    width: 40%;
+    background-color: #a039bf;
+    border-top: dotted 10px rgba(255, 255, 255, .2);
+}
+
+.bun-bottom {
+    height: 45px;
+    width: 60%;
+    background: sandybrown;
+    border-radius: 20px 20px 40px 40px;
+    border-top: solid 8px rgba(0, 0, 0, .1)
+}
+
+.plate {
+    height: 25px;
+    width: 80%;
+    background: #656565;
+    border-radius: 20px 20px 200px 200px;
+    border-top: solid 2px rgba(0, 0, 0, .1);
+    border-bottom: solid 5px rgba(0, 0, 0, .2);
+}
