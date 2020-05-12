@@ -21,8 +21,8 @@ html {
     padding-right: 50px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
     -webkit-box-shadow: 0 0 5px 2px lightgrey;
-    -webkit-border-radius: 10px;
 }
 
 h1.rainbow {

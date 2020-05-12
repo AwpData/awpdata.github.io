@@ -1,0 +1,41 @@
+* {
+    font-family: Helvetica, Ariel, serif;
+    text-align: center;
+    font-size: 32px;
+}
+
+div {
+    display: inline-block;
+    margin: 30px auto;
+    width: 100px;
+    background: papayawhip;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    font-size: 34px;
+}
+
+
+.show {
+    opacity: 0.0;
+    animation: visible 1s ease-out forwards;
+}
+
+@keyframes visible {
+    0% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
