@@ -27,3 +27,13 @@ if (age === null || age === "") {
 } else {
     document.getElementById("message").innerHTML = age.bold() + " is not a number, try again";
 }
+
+window.addEventListener('keydown', (event) => {
+    console.log(event);
+    if (event.key === "r") {
+        window.location.reload(true);
+    }
+    if (event.key === "h") {
+        window.location.href = "../../index.html";
+    }
+});
