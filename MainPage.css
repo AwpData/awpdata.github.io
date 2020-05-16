@@ -21,6 +21,7 @@ html {
     padding-right: 50px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 5px 2px lightgrey;
 }
@@ -75,11 +76,18 @@ p.hide {
     }
 }
 
+caption {
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
 table {
     border-collapse: collapse;
     background-color: seashell;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
 }
 
 th, tr, td {
@@ -92,7 +100,7 @@ th {
     background-color: gold;
 }
 
-a { /* It flashes red to black (EXPERIMENTAL) */
+a {
     text-decoration: none;
     font-family: Helvetica, serif;
     background: linear-gradient(to right, red, black);
