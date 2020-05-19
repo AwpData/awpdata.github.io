@@ -8,6 +8,16 @@ h1 {
     text-align: center;
 }
 
+div.box-header {
+    width: 300px;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 10px;
+    background: papayawhip;
+    text-align: center;
+}
+
+
 div#text > p {
     text-align: center;
     font-size: 32px;
