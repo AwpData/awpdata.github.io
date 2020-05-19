@@ -1,0 +1,46 @@
+* {
+    font-family: Helvetic, Ariel, sans-serif;
+}
+
+html {
+    background: seashell;
+    width: auto;
+    border-left: 200px solid darkred;
+    border-right: 200px solid darkred;
+    height: 1000px;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type=text]:hover {
+    border: 2px solid #000000;
+}
+
+input[type=submit] {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+input[type=submit]:hover {
+    border: 2px solid black;
+    color: blue;
+}
+
+.box {
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    border: 2px solid #000000;
+    background-color: papayawhip;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 0 0 2px 2px lightgrey
+}

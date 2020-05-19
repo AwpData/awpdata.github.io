@@ -5,6 +5,7 @@
 
 h1 {
     font-size: 34px;
+    text-align: center;
 }
 
 div#text > p {
@@ -14,6 +15,12 @@ div#text > p {
 
 p.counters {
     margin: 0 0;
+    font-size: 14px;
+}
+
+p#stats {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 div.box {
