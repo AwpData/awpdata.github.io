@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Turn Your Computer On!</title>
+    <title>Turn It In!</title>
     <link href="stylesheet.css" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="box" style="width: 600px">
-        <h1>Can You Turn Your Computer On?</h1>
+        <h1>Text Adventure Final Project</h1>
         <a href="../index.html">Home</a>
     </div>
 </header>
@@ -16,9 +16,13 @@
     <div class="box">
 
         <!-- Insert Script here for game -->
-        <form>
-            <input type="text" name="input" placeholder="What should I do first?"/>
-            <input type="submit" value="enter"/>
+        <script src="script.js"></script>
+        <img src="Photos%20of%20Locations/VariousScreens/Menu%20Screen.png" alt="Image must load in order to play!">
+        <form id="input" onsubmit="return false">
+            <label>
+                <input id="input-text" type="text" name="inputBox" autofocus placeholder="What should I do?"/>
+                <button id="input-submit" onclick="getInput(form)">Submit</button>
+            </label>
         </form>
     </div>
 </main>

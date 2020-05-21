@@ -5,10 +5,16 @@
 html {
     background: seashell;
     width: auto;
-    border-left: 200px solid darkred;
-    border-right: 200px solid darkred;
+    border-left: 200px solid darkblue;
+    border-right: 200px solid darkblue;
     height: 1000px;
     overflow: auto;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+    padding: 20px;
 }
 
 h1 {
@@ -23,12 +29,12 @@ input[type=text]:hover {
     border: 2px solid #000000;
 }
 
-input[type=submit] {
+input[type=button] {
     border-radius: 10px;
     border: 1px solid black;
 }
 
-input[type=submit]:hover {
+input[type=button]:hover {
     border: 2px solid black;
     color: blue;
 }
@@ -36,7 +42,7 @@ input[type=submit]:hover {
 .box {
     text-align: center;
     padding: 20px;
-    width: 300px;
+    width: 500px;
     border: 2px solid #000000;
     background-color: papayawhip;
     margin-left: auto;
