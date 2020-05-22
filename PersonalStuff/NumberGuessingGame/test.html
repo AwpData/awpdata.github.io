@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Game</title>
+    <style>
+        * {
+            margin: 10px;
+        }
+
+        p {
+            font-family: Calibri, Ariel, serif;
+        }
+    </style>
+</head>
+<body>
+<p id="message">Guess a number between 1 and 100</p>
+<p id="remaining" style="display:inline">Remaining Guesses: 10</p>
+
+<form id="input" onsubmit="return false">
+    <input type="text" id="input-text" placeholder="Guess" autofocus>
+    <button id="input-submit" onclick="checkNum(form)">Guess</button>
+</form>
+<p id="badInput" style="color: red; font-weight: bold"></p>
+<a href="../../index.html" style="text-decoration: none">Home</a>
+<script>
+    let inputBox = document.getElementById("input-text");
+    let messageTag = document.getElementById("message");
+    let actualNum = parseInt((Math.random() * 100) + 1);
+    let remaining = 10;
+
+    console.log(actualNum);
+
+    function checkNum() {
+        let num = parseInt(inputBox.value);
+        console.log(num.toString());
+        if (isNaN(num)) {
+            document.getElementById("badInput").innerHTML = "*Input must be a number!";
+            return;
+        }
+        document.getElementById("badInput").innerHTML = "";
+        remaining--;
+        if (remaining === 0) {
+            messageTag.innerHTML = "You lost! The number was " + actualNum.toString() + ". Refreshing...";
+            setTimeout(location.reload.bind(location), 1000);
+        } else if (num < actualNum) {
+            messageTag.innerHTML = "Too low!";
+        } else if (num > actualNum) {
+            messageTag.innerHTML = "Too high!";
+        } else if (num === actualNum) {
+            messageTag.innerHTML = "You got it! Refreshing...";
+            setTimeout(location.reload.bind(location), 1000);
+        }
+        document.getElementById("remaining").innerHTML = "Remaining guesses: " + remaining.toString();
+        inputBox.value = "";
+
+        inputBox.addEventListener("keyup", (event) => {
+            event.preventDefault();
+            if (event.key === "Enter") {
+                document.getElementById("input-submit").click();
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

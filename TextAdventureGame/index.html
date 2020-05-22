@@ -18,11 +18,9 @@
         <!-- Insert Script here for game -->
         <script src="script.js"></script>
         <img src="Photos%20of%20Locations/VariousScreens/Menu%20Screen.png" alt="Image must load in order to play!">
-        <form id="input" onsubmit="return false">
-            <label>
-                <input id="input-text" type="text" name="inputBox" autofocus placeholder="What should I do?"/>
-                <button id="input-submit" onclick="getInput(form)">Submit</button>
-            </label>
+        <form id="input" method="post" onsubmit="return false">
+            <input id="input-text" type="text" name="inputBox" autofocus placeholder="What should I do?"/>
+            <button id="input-submit" onclick="getInput()">Submit</button>
         </form>
     </div>
 </main>

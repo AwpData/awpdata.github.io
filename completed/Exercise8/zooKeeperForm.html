@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>E-Sports Form</title>
+    <link href="css/zookeeperForm.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="wrapper">
+    <h1>E-Sports Recruit Application Form</h1>
+
+    <form id="gamingForm" action="thankyoupage.html" method="post">
+        <p>Please complete the form. Mandatory fields are marked with a <em>*</em></p>
+        <fieldset>
+            <legend>Contact Details</legend>
+            <label class="text" for="form-name">Name<em>*</em></label>
+            <input type="text" id="form-name" autofocus required placeholder="Jane Doe" name="name"><br>
+            <label class="text" for="form-email">Email<em>*</em></label>
+            <input type="email" id="form-email" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Background Information</legend>
+            <label for="form-comments">How did you get into video games?<em>*</em></label>
+            <textarea rows="4" cols="40" id="form-comments" name="comments" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Favorite Developer(s)</legend>
+            <label for="fav-developer">Pick your favorite game developer!</label>
+            <select id="fav-developer">
+                <option value="developer">None</option>
+                <option value="developer">Valve</option>
+                <option value="developer">Activision</option>
+                <option value="developer">CDProjectRed</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Favorite Video Games</legend>
+            <label><input type="checkbox" name="favorite" value="CS"> CS:GO</label>
+            <label><input type="checkbox" name="favorite" value="LOL"> League of Legends</label>
+            <label><input type="checkbox" name="favorite" value="OW"> Overwatch</label>
+            <label><input type="checkbox" name="favorite" value="COD"> COD: Modern Warfare</label>
+            <label><input type="checkbox" name="favorite" value="DOTA"> Dota 2</label>
+            <label><input type="checkbox" name="favorite" value="Battlefield"> Battlefield V</label>
+            <label><input type="checkbox" name="favorite" value="Witcher"> The Witcher 3</label>
+            <label><input type="checkbox" name="favorite" value="Skyrim"> Elder Scrolls V: Skyrim</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Favorite E-Sport Team</legend>
+            <label><input type="radio" name="team" value="None" checked="checked">None of These</label>
+            <label><input type="radio" name="team" value="C9">Cloud 9</label>
+            <label><input type="radio" name="team" value="100T">100 Thieves</label>
+            <label><input type="radio" name="team" value="FAZE">FAZE</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>How'd You Hear About Us?</legend>
+            <label><input type="checkbox" name="method" value="Email">Email</label>
+            <label><input type="checkbox" name="method" value="Friend">A Friend</label>
+            <label><input type="checkbox" name="method" value="Google">Google</label>
+        </fieldset>
+
+        <p><input type="submit" value="Submit Application"></p>
+    </form>
+</div>
+</body>
+</html>
