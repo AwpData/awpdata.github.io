@@ -7,22 +7,27 @@
 </head>
 <body>
 <header>
-    <div class="box" style="width: 600px">
-        <h1>Text Adventure Final Project</h1>
+    <div class="box" style="width: 600px; padding: 10px;">
+        <h1>Late Assignment</h1>
         <a href="../index.html">Home</a>
     </div>
 </header>
 <main>
     <div class="box">
-
-        <!-- Insert Script here for game -->
-        <script src="script.js"></script>
-        <img src="Photos%20of%20Locations/VariousScreens/Menu%20Screen.png" alt="Image must load in order to play!">
+        <img id="image" src="PhotosOfLocations/VariousScreens/MenuScreen.png" alt="Image must load in order to play!">
+        <div id="dialog-box">
+            <p id="dialog">Click play or type "play"</p>
+        </div>
+        <p id="inventory-header">Inventory</p>
+        <div id="inventory">
+        </div>
         <form id="input" method="post" onsubmit="return false">
-            <input id="input-text" type="text" name="inputBox" autofocus placeholder="What should I do?"/>
-            <button id="input-submit" onclick="getInput()">Submit</button>
+            <label for="input-text">Input: </label>
+            <input id="input-text" type="text" name="inputBox" autofocus placeholder="What should I look at?"/>
+            <button id="input-submit" onclick="getInput(form)">Submit</button>
         </form>
     </div>
+    <script src="script.js"></script>
 </main>
 
 </body>
