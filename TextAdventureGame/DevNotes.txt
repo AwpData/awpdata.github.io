@@ -1,0 +1,17 @@
+
+Loc 2:
+If user picks up rag after computer is on, dialog easter egg
+Table gives hint of "rag"
+Need to change lastloc2 to be loc2c once power is turned on (loc2b if rags arn't found, darn speedrunners) 
+
+Loc 3:
+door steps: codePower (off -> on) -> codeSuccess (red -> green) -> doorStatus (open <-> close)
+Easter egg at door if user enters ####
+
+Loc 4:
+Window must be clean for magnifier to be put on window to look at sign (Order: windowClean > magnifierOnWindow > zoomedIn)
+
+Loc 5:
+Need to add code for if user backs up when door is closed
+If user backs into the door when its closed, secret easter egg dialog 
+

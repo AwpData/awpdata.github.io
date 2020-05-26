@@ -1,0 +1,99 @@
+* {
+    font-family: Helvetica, Ariel, serif;
+}
+
+html {
+    border-left: solid 200px rgba(7, 92, 5, 0.8);
+    border-right: solid 200px rgba(7, 92, 5, 0.8);
+    height: 1000px;
+    overflow: auto;
+}
+
+div#startScreen {
+    text-align: center;
+    background-color: rgba(7, 92, 5, 0.8);
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px auto;
+    width: 400px;
+}
+
+div#headerBox {
+    text-align: center;
+    background-color: papayawhip;
+    margin: 10px auto;
+    border: 1px solid black;
+    padding: 10px;
+    width: 300px;
+}
+
+div#mainBox {
+    text-align: center;
+    background-color: rgba(7, 92, 5, 0.8);
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px auto;
+    width: 400px;
+}
+
+div#outputBox {
+    background: white;
+    margin: 20px auto;
+    padding: 5px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+p.help {
+    font-weight: bold;
+    color: white;
+}
+
+p#output {
+    font-weight: bold;
+}
+
+p#score {
+    font-weight: bold;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+}
+
+h2 {
+    color: white;
+}
+
+img {
+    display: inline-block;
+    margin: 10px;
+}
+
+button#roll {
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+button#play {
+    padding: 20px;
+}
+
+.flash {
+    animation: outputFlash 1s ease-out;
+}
+
+@keyframes outputFlash {
+    0%, 100% {
+        font-size: 16px;
+    }
+    50% {
+        font-size: 20px;
+    }
+}

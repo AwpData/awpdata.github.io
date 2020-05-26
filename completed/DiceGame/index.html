@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="Stylesheet.css">
+</head>
+<body>
+<header>
+    <div id="headerBox">
+        <h1>Dice Game</h1>
+        <a href="../../index.html">Home</a>
+    </div>
+</header>
+<main>
+    <div id="startScreen">
+        <h2>Are You Lucky?</h2>
+        <img src="Images/placeholder1.png" alt="die1">
+        <img src="Images/placeholder2.png" alt="die2">
+        <p class="help">Roll a 7 or 11, you win!</p>
+        <p class="help">Roll a 2 and you lose...</p>
+        <br>
+        <button id="play" type="submit">Play!</button>
+    </div>
+    <div id="mainBox" style="display: none">
+        <h2>Are You Lucky?</h2>
+        <img id="die1" src="Images/placeholder1.png" alt="die">
+        <img id="die2" src="Images/placeholder2.png" alt="die2">
+        <br>
+        <button id="roll" type="submit">Roll!</button>
+        <div id="outputBox">
+            <p id="output">Click Roll!</p>
+        </div>
+        <p id="score">Score: 0</p>
+    </div>
+    <script src="script.js"></script>
+</main>
+</body>
+</html>
