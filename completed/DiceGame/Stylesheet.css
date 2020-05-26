@@ -82,6 +82,7 @@ button#roll {
 }
 
 button#play {
+    font-weight: bold;
     padding: 20px;
 }
 
