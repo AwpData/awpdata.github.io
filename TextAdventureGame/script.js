@@ -698,7 +698,7 @@ function loc5Statements(input) {
     }
     // A little easter egg for trying to back into the closed door
     else if (input === "back" && !doorOpen) {
-        dialog = "I just hit the door and it really hurt D:";
+        dialog.innerHTML = "I just hit the door and it really hurt D:";
     }
 
     // Various inputs for dialog (Light is only requirement for dialog to be played)
@@ -792,4 +792,8 @@ function loc7Statements(input) {
         dialog.innerHTML = "Indicator says power is on";
     }
     lastStoredImg = lastStoredLoc7;
+}
+
+function loc8Statements(input) {
+
 }

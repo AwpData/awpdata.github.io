@@ -107,14 +107,14 @@ function checkWin(num1, num2) {
         // Play a losing sound by changing the audio src path to lose.wav
         audio.src = "Sounds/Lose.wav";
         audio.play();
-        const coloredText = ("Yikes! Rolled " + (num1 + num2) + "!").fontcolor("red");
+        const coloredText = ("Rolled " + (num1 + num2) + "!").fontcolor("red");
         output.innerHTML = coloredText + " Score -1";
         score--;
         scoreCounter.innerHTML = "Score: " + score;
         output.classList.add("flash");
     } else {
         // Just output what you rolled
-        output.innerHTML = "Roll of " + (num1 + num2);
+        output.innerHTML = "Rolled " + (num1 + num2);
     }
 }
 
