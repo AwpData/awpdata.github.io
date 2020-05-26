@@ -7,7 +7,6 @@ let play = document.getElementById("play");
 let roll = document.getElementById("roll");
 let die1 = document.getElementById("die1");
 let die2 = document.getElementById("die2");
-let outputBox = document.getElementById("outputBox");
 let output = document.getElementById("output");
 let scoreCounter = document.getElementById("score");
 let score = 0;
