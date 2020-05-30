@@ -6,7 +6,7 @@ html {
     width: auto;
     border-left: 200px solid #242582;
     border-right: 200px solid #242582;
-    height: 1000px;
+    height: 2000px;
     overflow: auto;
 }
 
@@ -40,16 +40,17 @@ h1 {
     }
 }
 
-
 a {
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid black;
 }
 
 a:hover {
     color: red;
-    font-size: 26px;
 }
 
 img#image {
@@ -104,5 +105,41 @@ input[type=button]:hover {
     border: 2px solid black;
     color: blue;
 }
+
+div#achievement-box {
+    margin: 0 auto;
+    width: 1100px;
+}
+
+p#secrets {
+    text-align: left;
+    text-decoration: underline;
+    font-size: 24px;
+    font-weight: bold
+}
+
+div.achievement {
+    width: 500px;
+    border: 1px solid black;
+    background-color: yellow;
+    padding: 10px;
+    display: inline-block;
+}
+
+div.achievement > img {
+    border: 5px solid black;
+    background: white;
+}
+
+div.achievement > h2 {
+    display: inline;
+    padding: 5px;
+    vertical-align: top;
+}
+
+div.achievement > p {
+    font-size: 24px;
+}
+
 
 

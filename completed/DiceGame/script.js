@@ -12,18 +12,7 @@ let scoreCounter = document.getElementById("score");
 let score = 0;
 
 // Each image of the die initialized to be used later
-const d1 = new Image()
-d1.src = "Images/d1.png";
-const d2 = new Image()
-d2.src = "Images/d2.png";
-const d3 = new Image()
-d3.src = "Images/d3.png";
-const d4 = new Image()
-d4.src = "Images/d4.png";
-const d5 = new Image()
-d5.src = "Images/d5.png";
-const d6 = new Image()
-d6.src = "Images/d6.png";
+let diceImageArray = ["Images/d1.png", "Images/d2.png", "Images/d3.png", "Images/d4.png", "Images/d5.png", "Images/d6.png"]
 
 // This event listener just transitions the start screen to the play screen when clicked
 // In detail: Start Screens display is set to hide while main game's display will show
@@ -32,8 +21,8 @@ play.addEventListener("click", (event) => {
     audio.play();
     document.getElementById("startScreen").style.display = "none"
     document.getElementById("mainBox").style.display = "block";
-    die1.src = d1.src;
-    die2.src = d1.src;
+    die1.src = "Images/d1.png";
+    die2.src = "Images/d1.png";
 });
 
 // Event listener listens for the button to be clicked, which invokes the method that rolls the die / plays die audio
@@ -62,26 +51,10 @@ function dieChooser() {
     checkWin(num1, num2);
 }
 
-// Function is used to replace the die image depending on what was rolled for that die from dieChooser() method
+// Function is used to replace the die image from the array depending on what was rolled for that die from dieChooser() method
 function newDieImage(oldDie, newDieNum) {
-    let newDie = die1; // I just set it to die1 to avoid a possible null error
-    if (newDieNum === 1) {
-        newDie = d1;
-    } else if (newDieNum === 2) {
-        newDie = d2;
-    } else if (newDieNum === 3) {
-        newDie = d3;
-    } else if (newDieNum === 4) {
-        newDie = d4;
-    } else if (newDieNum === 5) {
-        newDie = d5;
-    } else if (newDieNum === 6) {
-        newDie = d6;
-    }
-    // Then, create a new image object and set the image src to the new img before replacing the old img with it
-    let img = new Image();
-    img.src = newDie.src;
-    oldDie.src = img.src;
+    // Replaces the dice image with new dice image from array based on newDieNum parameter passed
+    oldDie.src = diceImageArray[newDieNum - 1];
 }
 
 // https://stackoverflow.com/questions/35114042/triggering-css3-keyframes-with-javascript-multiple-times

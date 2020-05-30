@@ -10,26 +10,29 @@
     <div class="box" style="width: 600px; padding: 10px;">
         <h1>Late Assignment</h1>
         <a href="../index.html">Home</a>
+        <a href="walkthrough.html" target="_blank">Walkthrough</a>
     </div>
 </header>
 <main>
     <div class="box">
         <img id="image" src="PhotosOfLocations/VariousScreens/MenuScreen.png" alt="Image must load in order to play!">
         <div id="dialog-box">
-            <p id="dialog">Click play or type "play"</p>
+            <p id="dialog">Type "play"</p>
         </div>
         <p id="inventory-header">Inventory</p>
         <div id="inventory">
         </div>
         <form id="input" method="post" onsubmit="return false">
             <label for="input-text">Input: </label>
-            <input id="input-text" type="text" name="inputBox" autofocus placeholder="What should I look at?"/>
-            <button id="input-submit" onclick="getInput(form)">Submit</button>
+            <input id="input-text" type="text" name="inputBox" autofocus placeholder="What should I do?"/>
+            <button id="input-submit">Submit</button>
         </form>
     </div>
-    <p id="secrets"><u>Secrets Found</u></p>
+    <div id="achievement-box">
+        <p id="secrets">Secret Achievements: (0/4)</p>
+        <div id="achievement-container"></div>
+    </div>
     <script src="script.js"></script>
 </main>
-
 </body>
 </html>
