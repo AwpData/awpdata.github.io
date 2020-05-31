@@ -200,7 +200,7 @@ let controlOn = false;
 let powerOn = false;
 
 // This event handler is used to listen for the button to be clicked to parse the input
-inputSubmit.addEventListener("click", (event) => {
+inputSubmit.addEventListener("click", () => {
     getInput(document.getElementById("input"));
 });
 
