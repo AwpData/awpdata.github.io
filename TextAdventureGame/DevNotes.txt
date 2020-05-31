@@ -15,3 +15,7 @@ Loc 5:
 Need to add code for if user backs up when door is closed
 If user backs into the door when its closed, secret easter egg dialog 
 
+----------------------------
+(5/31/20)
+Game is fully ready to play now
+Walkthrough page is completed!

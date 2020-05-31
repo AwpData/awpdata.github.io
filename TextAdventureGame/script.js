@@ -1,7 +1,4 @@
-// Trevor Tang (Finished )
-// TO-DO:
-// -Put location images into arrays???
-// -There should be a text output area to describe the current game location at any time. (Else statement after firsttimeloc)
+// Trevor Tang (Finished 5/31/20)
 
 let inputBox = document.getElementById("input-text"); // Text input-box
 let inputSubmit = document.getElementById("input-submit"); // Submit button
@@ -203,12 +200,13 @@ let controlOn = false;
 let powerOn = false;
 
 // This event handler is used to listen for the button to be clicked to parse the input
-document.getElementById("input-submit").addEventListener("click", (event) => {
+inputSubmit.addEventListener("click", (event) => {
     getInput(document.getElementById("input"));
 });
 
 // First function called after submit is clicked; it parses input, updates the visual inventory, & clears input box
 function getInput(form) {
+    // I use String method .toLowerCase() so that it is easier to compare user input with code values
     let input = form.inputBox.value.toLowerCase();
     parseInput(input);
     updateInventory(inventory);
@@ -270,6 +268,7 @@ function parseInput(input) {
         if (input === "play") {
             show_image(imgHelp.src);
             dialog.innerHTML = "Type \"play\"";
+            playSound("Sounds/NextScreen.wav");
         }
     }
     // If the user is on the help page, they can only type 'play' or 'got it' to get off of the help screen
@@ -277,14 +276,17 @@ function parseInput(input) {
         if (input === "play") {
             show_image(lastStoredImg);
             dialog.style.display = "block";
+            dialog.innerHTML = "Back to my room";
+            playSound("Sounds/HelpScreen.flac");
             if (firstTimeLoc1) { // This is only used once at the start of the game as this is where the user starts
                 dialog.innerHTML = firstTimeDialogLoc1;
                 firstTimeLoc1 = false;
+                playSound("Sounds/Clock.wav");
             }
         }
     } else if (image.src.match("Location1")) { // If user is on location 1, go to location 1's possible inputs!
         loc1Statements(input);
-    } else if (image.src.match("Location2")) { // See above comment for rest of these statements
+    } else if (image.src.match("Location2")) { // See above comment for rest of these statements as they are similar
         loc2Statements(input);
     } else if (image.src.match("Location3")) {
         loc3Statements(input);
@@ -301,7 +303,8 @@ function parseInput(input) {
     }
     if (input === "help") { // Displays help screen no matter what location the user currently is in
         show_image(imgHelp.src);
-        dialog.style.display = "none";
+        dialog.innerHTML = "Type \"play\"";
+        playSound("Sounds/HelpScreen.flac");
     }
 }
 
@@ -375,15 +378,20 @@ function loc1Statements(input) {
             firstTimeLoc2 = false;
         } else if (computerOn) {
             dialog.innerHTML = "Yes, I can turn in my assignment now!";
+        } else {
+            dialog.innerHTML = "The computer side of the room";
         }
         step();
     }
     // to Loc 4 (window)
     else if (input === "right") {
+        lastStoredImg = lastStoredLoc4;
         show_image(lastStoredLoc4);
         if (firstTimeLoc4 === true) {
             dialog.innerHTML = firstTimeDialogLoc4;
             firstTimeLoc4 = false;
+        } else {
+            dialog.innerHTML = "The window side of the room";
         }
         step();
     }
@@ -416,6 +424,7 @@ function loc1Statements(input) {
         dialog.innerHTML = "I can't sleep yet!";
     } else {
         dialog.innerHTML = "I don't know how that's going to help me";
+        playSound("Sounds/Error.wav");
     }
     lastStoredImg = lastStoredLoc1;
 }
@@ -453,6 +462,7 @@ function loc2Statements(input) {
     // to Loc 1 (bed)
     else if (input === "right") {
         show_image(lastStoredLoc1);
+        dialog.innerHTML = "The bed side of the room";
         step();
     }
     // to Loc 3 (door)
@@ -461,6 +471,8 @@ function loc2Statements(input) {
         if (firstTimeLoc3) {
             dialog.innerHTML = firstTimeDialogLoc3;
             firstTimeLoc3 = false;
+        } else {
+            dialog.innerHTML = "The door side of the room";
         }
         step();
     }
@@ -480,6 +492,7 @@ function loc2Statements(input) {
         dialog.innerHTML = "My favorite poster in my room";
     } else {
         dialog.innerHTML = "I don't know how that's going to help me";
+        playSound("Sounds/Error.wav");
     }
     lastStoredImg = lastStoredLoc2;
 }
@@ -544,7 +557,7 @@ function loc3Statements(input) {
         } else if (!lightOn) {
             dialog.innerHTML = "Still can't see anything!";
         } else if (lightOn) {
-            dialog.innerHTML = "This wall is intimidating";
+            dialog.innerHTML = "The light side of this room";
         }
         step();
     }
@@ -554,6 +567,8 @@ function loc3Statements(input) {
         if (firstTimeLoc4) {
             dialog.innerHTML = firstTimeDialogLoc4;
             firstTimeLoc4 = false;
+        } else {
+            dialog.innerHTML = "The window side of the room";
         }
         step();
     }
@@ -568,6 +583,8 @@ function loc3Statements(input) {
             firstTimeLoc2 = false;
         } else if (computerOn) {
             dialog.innerHTML = "Yes, I can turn in my assignment now!";
+        } else {
+            dialog.innerHTML = "The computer side of the room";
         }
         step();
     }
@@ -612,6 +629,7 @@ function loc3Statements(input) {
         dialog.innerHTML = "I believe the code format for the door was \"####\"";
     } else {
         dialog.innerHTML = "I don't know how that's going to help me";
+        playSound("Sounds/Error.wav");
     }
     lastStoredImg = lastStoredLoc3;
 }
@@ -642,7 +660,7 @@ function loc4Statements(input) {
     }
 
     // Cleans window if rag is found and window is dirty, nested if-statements needed if power key is taken or not
-    else if (input === "rag" && ragFound && !windowClean) {
+    else if ((input === "rag" || input === "clean") && ragFound && !windowClean) {
         if (!powerKeyFound) {
             show_image(imgL4A.src);
             lastStoredLoc4 = imgL4A.src;
@@ -692,7 +710,8 @@ function loc4Statements(input) {
         } else {
             dialog.innerHTML = "Where could I use this code?";
         }
-        // The program will soft-lock the player from inputting anything as they are observing the sign
+        // The program will soft-lock the player from inputting anything as they are observing the sign using promise reject
+        // Calls promise function from top of code first
         sleep(3000).then(() => {
             show_image(lastStoredLoc4);
             inputBox.style.display = "inline";
@@ -703,6 +722,7 @@ function loc4Statements(input) {
     else if (input === "left") {
         show_image(lastStoredLoc1);
         step();
+        dialog.innerHTML = "The bed side of the room";
     }
     // to loc 3 (door)
     else if (input === "right") {
@@ -710,6 +730,8 @@ function loc4Statements(input) {
         if (firstTimeLoc3) {
             dialog.innerHTML = firstTimeDialogLoc3;
             firstTimeLoc3 = false;
+        } else {
+            dialog.innerHTML = "The door side of the room";
         }
         step();
     }
@@ -731,8 +753,11 @@ function loc4Statements(input) {
         dialog.innerHTML = "Well, there is no place for a key here";
     } else if (input === "rag" && !ragFound) {
         dialog.innerHTML = "I don't have a rag to clean this with!"
+    } else if (input === "clean" && !ragFound) {
+        dialog.innerHTML = "I don't have anything to clean it with";
     } else {
         dialog.innerHTML = "I don't know how that is going to help me";
+        playSound("Sounds/Error.wav");
     }
     lastStoredImg = lastStoredLoc4;
 }
@@ -754,6 +779,7 @@ function loc5Statements(input) {
     else if (input === "back" && doorOpen) {
         show_image(lastStoredLoc3);
         step();
+        dialog.innerHTML = "The door side of the room";
     }
     // to loc 6 (sign)
     else if (input === "right" && lightOn) {
@@ -761,6 +787,8 @@ function loc5Statements(input) {
         if (firstTimeLoc6) {
             dialog.innerHTML = firstTimeDialogLoc6;
             firstTimeLoc6 = false;
+        } else {
+            dialog.innerHTML = "The poster side of the room";
         }
         step();
     }
@@ -770,6 +798,8 @@ function loc5Statements(input) {
         if (firstTimeLoc8) {
             dialog.innerHTML = firstTimeDialogLoc8;
             firstTimeLoc8 = false;
+        } else {
+            dialog.innerHTML = "The power box side of the room";
         }
         step();
     }
@@ -790,6 +820,7 @@ function loc5Statements(input) {
         dialog.innerHTML = "This wall is very ugly";
     } else {
         dialog.innerHTML = "I don't know how that is going to help me";
+        playSound("Sounds/Error.wav");
     }
 
     lastStoredImg = lastStoredLoc5;
@@ -815,6 +846,7 @@ function loc6Statements(input) {
     else if (input === "left") {
         show_image(lastStoredLoc5);
         step();
+        dialog.innerHTML = "The light side of the room";
     } else if (input === "right") {
         whichLoc7ImageDoIUse(doorOpen, powerOn); // there are too many conditionals for loc 7, so use a function to simplify
         step();
@@ -824,6 +856,7 @@ function loc6Statements(input) {
         dialog.innerHTML = "Yes, this wall is ugly I know that!";
     } else {
         dialog.innerHTML = "I don't know how that is going to help me";
+        playSound("Sounds/Error.wav");
     }
 
     lastStoredImg = lastStoredLoc6;
@@ -848,15 +881,22 @@ function loc7Statements(input) {
     else if (input === "forward" && doorOpen) {
         show_image(lastStoredLoc1);
         step();
+        dialog.innerHTML = "The bed side of the room";
     }
     // to Loc 6 (sign) depending if door is open or closed
     else if (input === "left") {
+        if (firstTimeLoc6) {
+            dialog.innerHTML = firstTimeDialogLoc6;
+            firstTimeLoc6 = false;
+        }
         if (doorOpen) {
             show_image(imgL6.src);
             lastStoredLoc6 = imgL6.src;
         } else if (!doorOpen) {
             show_image(imgL6A.src);
             lastStoredLoc6 = imgL6A.src;
+        } else {
+            dialog.innerHTML = "The poster side of the room";
         }
         step();
     }
@@ -867,6 +907,8 @@ function loc7Statements(input) {
         if (firstTimeLoc8) {
             dialog.innerHTML = firstTimeDialogLoc8;
             firstTimeLoc8 = false;
+        } else {
+            dialog.innerHTML = "The power box side of the room";
         }
         step();
     }
@@ -882,6 +924,7 @@ function loc7Statements(input) {
         }
     } else {
         dialog.innerHTML = "I don't know how that is going to help me";
+        playSound("Sounds/Error.wav");
     }
     lastStoredImg = lastStoredLoc7;
 }
@@ -920,6 +963,7 @@ function loc8Statements(input) {
     } else if (input === "right") {
         show_image(lastStoredLoc5);
         step();
+        dialog.innerHTML = "The light side of the room";
     }
     // Secret Achievement: Shocking Yourself
     else if (input === "wire" && powerOn) {
@@ -943,6 +987,7 @@ function loc8Statements(input) {
         dialog.innerHTML = "Yes, this is the place to turn on the power";
     } else {
         dialog.innerHTML = "I don't know how that is going to help me";
+        playSound("Sounds/Error.wav");
     }
 }
 

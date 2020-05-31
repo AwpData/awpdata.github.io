@@ -1,12 +1,12 @@
 * {
-    font-family: Helvetic, Ariel, sans-serif;
+    font-family: Helvetica, Ariel, sans-serif;
 }
 
 html {
     width: auto;
     border-left: 200px solid #242582;
     border-right: 200px solid #242582;
-    height: 2000px;
+    height: 1500px;
     overflow: auto;
 }
 
