@@ -1,0 +1,81 @@
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+html {
+    border-left: solid black 200px;
+    border-right: solid black 200px;
+    height: 1500px;
+    overflow: auto;
+}
+
+div#header {
+    text-align: center;
+    background: papayawhip;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px auto;
+    width: 300px;
+}
+
+div#text-content {
+    text-align: left;
+    margin: 0 200px;
+    padding: 5px;
+}
+
+table {
+    text-align: center;
+    background: seashell;
+    border: solid black 2px;
+    margin: 20px auto;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+th {
+    font-weight: bold;
+    font-size: 24px;
+    background: gold;
+}
+
+td {
+    font-weight: bold;
+    background: white;
+}
+
+th, td {
+    border: solid black 2px;
+    padding: 10px;
+}
+
+p#special {
+    text-align: center;
+    font-family: Gravity, Helvetica, serif;
+    font-size: 36px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: text_gradient_effect 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes text_gradient_effect {
+    0%, 100% {
+        background-position: 0;
+    }
+    50% {
+        background-position: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
