@@ -1,4 +1,4 @@
 # awpdata.github.io
-To show some of my HTML/CSS projects right now.
+To show some of my HTML/CSS/JS projects right now.
+Hopefully I will keep updating this. 
 <br />
-I will get better.
