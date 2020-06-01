@@ -783,10 +783,16 @@ function loc5Statements(input) {
     }
     // to loc 6 (sign)
     else if (input === "right" && lightOn) {
-        show_image(lastStoredLoc6);
         if (firstTimeLoc6) {
             dialog.innerHTML = firstTimeDialogLoc6;
             firstTimeLoc6 = false;
+        }
+        if (doorOpen) {
+            show_image(imgL6.src);
+            lastStoredLoc6 = imgL6.src;
+        } else if (!doorOpen) {
+            show_image(imgL6A.src);
+            lastStoredLoc6 = imgL6A.src;
         } else {
             dialog.innerHTML = "The poster side of the room";
         }
