@@ -1,0 +1,41 @@
+* {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -ms-user-select: none;
+}
+
+div#click-counter {
+    text-align: center;
+    padding: 10px;
+    background: papayawhip;
+    border: 1px solid black;
+    width: 100px;
+    margin: 20px auto;
+}
+
+div#clicker {
+    padding: 20px;
+    border-radius: 100px;
+    border: 2px solid #492f2f;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background: saddlebrown;
+    box-shadow: 0 0 5px black;
+}
+
+.pulsate {
+    animation: pulsate 100ms ease-out;
+}
+
+@keyframes pulsate {
+    0%, 100% {
+        padding: 20px;
+    }
+    50% {
+        padding: 40px;
+    }
+}
