@@ -39,3 +39,11 @@ div#clicker {
         padding: 40px;
     }
 }
+
+div#upgrade-container {
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+}
