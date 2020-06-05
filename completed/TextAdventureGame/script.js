@@ -1003,7 +1003,7 @@ function playSound(fileName) {
 }
 
 function step() { // plays stepping sound when moving locations
-    playSound("Sounds/step.wav");
+    playSound("Sounds/Step.wav");
 }
 
 // These just track how many achievements are unlocked and which ones have been unlocked
