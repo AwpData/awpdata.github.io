@@ -2,6 +2,7 @@
 
 let inputBox = document.getElementById("input-text"); // Text input-box
 let inputSubmit = document.getElementById("input-submit"); // Submit button
+let helpButton = document.getElementById("help-button"); // Help button
 let dialog = document.getElementById("dialog"); // Dialog div box
 let image = document.getElementById("image"); // Image (CRUCIAL for location changes)
 
@@ -222,6 +223,15 @@ inputBox.addEventListener("keyup", (event) => {
     }
 });
 
+helpButton.addEventListener("click", () => {
+    if (image.src === imgHelp.src) {
+        dialog.innerHTML = "Type \"play\" or click the help button again";
+        parseInput("play");
+    } else {
+        parseInput("help");
+    }
+});
+
 // https://stackoverflow.com/questions/5451445/how-to-display-image-with-javascript
 // Updates the current image shown on screen by getting the new src of the image and replacing it with the old one
 function show_image(src) {
@@ -274,6 +284,7 @@ function parseInput(input) {
     // If the user is on the help page, they can only type 'play' or 'got it' to get off of the help screen
     else if (image.src === imgHelp.src) { // If on the help screen..
         if (input === "play") {
+            helpButton.style.display = "inline-block";
             show_image(lastStoredImg);
             dialog.style.display = "block";
             dialog.innerHTML = "Back to my room";

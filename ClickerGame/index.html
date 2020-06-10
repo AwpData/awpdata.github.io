@@ -7,20 +7,39 @@
 </head>
 <body>
 <header>
-    <h1>Click This!</h1>
+    <div id="header-box">
+        <h1>Click This!</h1>
+        <a href="../index.html">Home</a>
+    </div>
 </header>
 <main>
     <p id="click-multi-display"># of Clicks per User Click: 1</p>
-    <p id="user-stats-clicks"># of User Clicks: 0</p>
+    <p id="user-stats-clicks"></p>
+    <div id="helper-flex-container">
+        <div id="cursor" class="helper-layout">
+            <p id="cursor-count" class="count-style">0 owned</p>
+            <p>Cursor</p>
+            <p id="cursor-current-CPS">+1 CPS</p>
+            <p id="cursor-price">Cost: 100 clicks</p>
+        </div>
+        <div id="robot" class="helper-layout" style="display: none">
+            <p id="robot-count" class="count-style">0 owned</p>
+            <p>Robot</p>
+            <p id="robot-current-CPS">+2 CPS</p>
+            <p id="robot-price">Cost: 1000 clicks</p>
+        </div>
+    </div>
     <div id="click-counter">
         <p id="clicks">0 clicks</p>
         <p id="cps">0 helpers per second</p>
     </div>
     <div id="clicker"></div>
-    <div id="upgrade-container"></div>
+    <div id="upgrade-container">Upgrades</div>
     <div id="popup">
         <h2>Upgrade Bought!</h2>
     </div>
+    <p id="x-pos">x position: </p>
+    <p id="y-pos">y position: </p>
 </main>
 </body>
 <script src="script.js"></script>

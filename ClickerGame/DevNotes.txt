@@ -1,0 +1,18 @@
+List of Upgrades in order:
+
+User Clicker: 
+Total cookies > 100 = First Upgrade (Doubles Click Power)
+Total cookies > 200 && user clicks > 250 = Second Upgrade (Doubles Click Power) 
+Total cookies > 1000 && user clicks > 1000 = Third Upgrade (Doubles Click Power) 
+
+Cursor Upgrades:
+Owned Cursors >= 10 = Double Cursors (Doubles Cursor CPS power)
+Owned Cursors >= 25 = Quad Cursors (Doubles Cursor CPS power)
+
+Robot Upgrades:
+Owned Robots >= 10 = More Efficient Robots (Doubles Robot CPS power)
+Owned Robots >= 25 = Smarter Robots (Doubles Robot CPS power) 
+
+CPS Unlocks:
+
+Robots: 10 Cursors required 
