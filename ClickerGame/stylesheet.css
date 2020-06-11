@@ -138,8 +138,8 @@ div#popup {
     position: absolute;
     font-weight: bold;
     font-size: 19px;
-    color: white;
-    animation: showCPS 0.5s ease-out;
+    color: blue;
+    animation: showCPS 500ms ease-out;
 }
 
 @keyframes showCPS {

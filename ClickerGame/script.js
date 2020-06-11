@@ -28,8 +28,8 @@ let ownedRobots = 0;
 let x = null;
 let y = null;
 
-// Does this forever to let CPS add to total
-setInterval(update, 1000);
+// Does this forever to let helper CPS add to total
+setInterval(helperUpdate, 1000);
 
 // Continuously checks if the user can buy this upgrade
 setInterval(checkBuyable, 0);
@@ -40,9 +40,11 @@ clicker.addEventListener("click", () => {
     total += clickMultiplier;
     numOfUserClicks++;
     popUpCPS();
-    document.getElementById("user-stats-clicks").innerHTML = "Total # of User Clicks: " + numOfUserClicks.toString();
-    update();
+    counter.innerHTML = total.toLocaleString() + " clicks";
+    document.getElementById("user-stats-clicks").innerHTML = "Total # of User Clicks: " + numOfUserClicks.toLocaleString();
     play("Sounds/Click.wav");
+    checkForUpgrade();
+    checkForHelperDisplay();
 });
 
 // After animation finishes, remove the pulsate animation so it can be used again
@@ -95,10 +97,10 @@ function checkUnlockedUpgrades(title) {
 
 // Increments the total by however many CPS every second
 // Updates the total clicks the user has and the CPS they get from helpers / Checks if user can buy an upgrade
-function update() {
+function helperUpdate() {
     total += cps;
-    counter.innerHTML = total + " clicks";
-    cpsCounter.innerHTML = cps + " helpers per second";
+    counter.innerHTML = total.toLocaleString() + " clicks";
+    cpsCounter.innerHTML = cps.toLocaleString() + " helpers per second";
     checkForUpgrade();
     checkForHelperDisplay();
 }
@@ -115,8 +117,8 @@ cursorCPS.addEventListener("click", () => {
         ownedCursors++;
         total -= cursorPrice;
         cursorPrice = Math.floor(cursorPrice *= 1.2);
-        document.getElementById("cursor-count").innerHTML = ownedCursors.toString() + " owned";
-        document.getElementById("cursor-price").innerHTML = "Cost: " + cursorPrice.toString() + " clicks";
+        document.getElementById("cursor-count").innerHTML = ownedCursors.toLocaleString() + " owned";
+        document.getElementById("cursor-price").innerHTML = "Cost: " + cursorPrice.toLocaleString() + " clicks";
         counter.innerHTML = total + " clicks";
         play("Sounds/CPSBought.wav");
     }
@@ -129,8 +131,8 @@ robotCPS.addEventListener("click", () => {
         ownedRobots++;
         total -= robotPrice;
         robotPrice = Math.floor(robotPrice *= 1.2);
-        document.getElementById("robot-count").innerHTML = ownedRobots.toString() + " owned";
-        document.getElementById("robot-price").innerHTML = "Cost: " + robotPrice.toString() + " clicks";
+        document.getElementById("robot-count").innerHTML = ownedRobots.toLocaleString() + " owned";
+        document.getElementById("robot-price").innerHTML = "Cost: " + robotPrice.toLocaleString() + " clicks";
         counter.innerHTML = total + " clicks";
         play("Sounds/CPSBought.wav");
     }
@@ -189,7 +191,7 @@ class upgrade {
         let upgradeDescription = document.createElement("p");
         upgradeDescription.innerHTML = description;
         let upgradeCost = document.createElement("p");
-        upgradeCost.innerHTML = cost + " clicks";
+        upgradeCost.innerHTML = cost.toLocaleString() + " clicks"; // BUG, no commas
         upgrade.appendChild(upgradeTitle);
         upgrade.appendChild(upgradeDescription);
         upgrade.appendChild(upgradeCost);
@@ -229,21 +231,21 @@ class upgrade {
 // Upgrades the user click by given factor
 function upgradeClick(factor) {
     clickMultiplier *= factor;
-    document.getElementById("click-multi-display").innerHTML = "# of Clicks per User Click: " + clickMultiplier.toString();
+    document.getElementById("click-multi-display").innerHTML = "# of Clicks per User Click: " + clickMultiplier.toLocaleString();
 }
 
 function upgradeCursor(factor) {
     // I have to subtract the already owned cursors multiplier from cps before adding it again
     cps -= (cursorFactor * ownedCursors);
     cursorFactor *= factor;
-    document.getElementById("cursor-current-CPS").innerHTML = "+" + factor.toString() + " CPS";
+    document.getElementById("cursor-current-CPS").innerHTML = "+" + factor.toLocaleString() + " CPS";
     cps += (cursorFactor * ownedCursors);
 }
 
 function upgradeRobot(factor) {
     cps -= (robotFactor * ownedRobots);
     robotFactor *= factor;
-    document.getElementById("robot-current-CPS").innerHTML = "+" + factor.toString() + " CPS";
+    document.getElementById("robot-current-CPS").innerHTML = "+" + factor.toLocaleString() + " CPS";
     cps += (robotFactor * ownedRobots);
 }
 
