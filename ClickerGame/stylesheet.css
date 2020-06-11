@@ -10,7 +10,7 @@
 div#header-box {
     background: papayawhip;
     margin: 0 auto;
-    width: 200px;
+    width: 250px;
     border: 1px solid black;
     padding: 10px;
 }
@@ -60,9 +60,9 @@ p.count-style {
 div#click-counter {
     text-align: center;
     padding: 10px;
-    background: papayawhip;
+    background: lightblue;
     border: 1px solid black;
-    width: 100px;
+    width: 200px;
     margin: 20px auto;
 }
 
@@ -126,6 +126,23 @@ div#popup {
 }
 
 @keyframes pop-flash {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 100%;
+    }
+}
+
+.showCPS {
+    position: absolute;
+    font-weight: bold;
+    font-size: 19px;
+    color: white;
+    animation: showCPS 0.5s ease-out;
+}
+
+@keyframes showCPS {
     0%, 100% {
         opacity: 0;
     }

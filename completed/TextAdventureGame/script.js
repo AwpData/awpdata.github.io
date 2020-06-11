@@ -225,7 +225,6 @@ inputBox.addEventListener("keyup", (event) => {
 
 helpButton.addEventListener("click", () => {
     if (image.src === imgHelp.src) {
-        dialog.innerHTML = "Type \"play\" or click the help button again";
         parseInput("play");
     } else {
         parseInput("help");
@@ -314,7 +313,7 @@ function parseInput(input) {
     }
     if (input === "help") { // Displays help screen no matter what location the user currently is in
         show_image(imgHelp.src);
-        dialog.innerHTML = "Type \"play\"";
+        dialog.innerHTML = "Type \"play\" or click the help button";
         playSound("Sounds/HelpScreen.flac");
     }
 }
@@ -465,6 +464,7 @@ function loc2Statements(input) {
         // I hide all inputs because the user won and it cleans up the screen
         inputBox.style.display = "none";
         inputSubmit.style.display = "none";
+        helpButton.style.display = "none";
         dialog.innerHTML = "Yay! I turned it in just in time!";
         playSound("Sounds/Winner.wav");
     }

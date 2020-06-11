@@ -25,7 +25,6 @@ let robotPrice = 1000;
 let robotFactor = 2;
 let ownedRobots = 0;
 
-window.onload = getMousePosition();
 let x = null;
 let y = null;
 
@@ -40,6 +39,7 @@ clicker.addEventListener("click", () => {
     clicker.classList.add("pulsate");
     total += clickMultiplier;
     numOfUserClicks++;
+    popUpCPS();
     document.getElementById("user-stats-clicks").innerHTML = "Total # of User Clicks: " + numOfUserClicks.toString();
     update();
     play("Sounds/Click.wav");
@@ -54,12 +54,12 @@ clicker.addEventListener("animationend", () => {
 // So javascript requires you to put stuff in functions??? (GOOGLE THIS)
 function checkForUpgrade() {
     if (total >= 100 && !checkUnlockedUpgrades("First Upgrade")) {
-        new upgrade("First Upgrade", "Doubles click power", "100", "click", "2");
+        new upgrade("First Upgrade", "Doubles click power", "500", "click", "2");
     }
-    if (total >= 200 && numOfUserClicks >= 250 && !checkUnlockedUpgrades("Second Upgrade")) {
-        new upgrade("Second Upgrade", "Doubles click power again", "500", "click", "2");
+    if (total >= 1000 && numOfUserClicks >= 1100 && !checkUnlockedUpgrades("Second Upgrade")) {
+        new upgrade("Second Upgrade", "Doubles click power again", "2500", "click", "2");
     }
-    if (total >= 1000 && numOfUserClicks >= 1000 && !checkUnlockedUpgrades("Third Upgrade")) {
+    if (total >= 1000 && numOfUserClicks >= 5000 && !checkUnlockedUpgrades("Third Upgrade")) {
         new upgrade("Third Upgrade", "Doubles click power again!", "10000", "click", "2");
     }
     if (ownedCursors >= 10 && !checkUnlockedUpgrades("Double Cursors")) {
@@ -118,6 +118,7 @@ cursorCPS.addEventListener("click", () => {
         document.getElementById("cursor-count").innerHTML = ownedCursors.toString() + " owned";
         document.getElementById("cursor-price").innerHTML = "Cost: " + cursorPrice.toString() + " clicks";
         counter.innerHTML = total + " clicks";
+        play("Sounds/CPSBought.wav");
     }
 });
 
@@ -131,6 +132,7 @@ robotCPS.addEventListener("click", () => {
         document.getElementById("robot-count").innerHTML = ownedRobots.toString() + " owned";
         document.getElementById("robot-price").innerHTML = "Cost: " + robotPrice.toString() + " clicks";
         counter.innerHTML = total + " clicks";
+        play("Sounds/CPSBought.wav");
     }
 });
 
@@ -245,15 +247,19 @@ function upgradeRobot(factor) {
     cps += (robotFactor * ownedRobots);
 }
 
-function getMousePosition() {
-    document.onmousemove = getCursorXY;
-}
-
-function getCursorXY(e) {
-    x = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-    y = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
-    document.getElementById("x-pos").innerHTML = "x position: " + x.toString();
-    document.getElementById("y-pos").innerHTML = "y position: " + y.toString();
+// This pops up the cp of the mouse when the clicker is clicked
+// NOTE: Using CSS style in Javascript must match what you put in CSS (the 'px' in the left styler)
+function popUpCPS() {
+    let popUp = document.createElement("p");
+    popUp.innerHTML = "+" + clickMultiplier;
+    // This just sets the x (left) and y (top) of where the
+    popUp.style.left = event.clientX.toString() + "px";
+    popUp.style.top = event.clientY.toString() + "px";
+    clicker.appendChild(popUp);
+    popUp.classList.add("showCPS");
+    popUp.addEventListener("animationend", () => {
+        clicker.removeChild(popUp);
+    });
 }
 
 
