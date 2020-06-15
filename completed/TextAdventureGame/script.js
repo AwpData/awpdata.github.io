@@ -200,13 +200,9 @@ let controlOn = false;
 // THE FINAL STATEMENT TO WIN, the power (loc 8)! (true = on, false = off);
 let powerOn = false;
 
-// This event handler is used to listen for the button to be clicked to parse the input
-inputSubmit.addEventListener("click", () => {
-    getInput(document.getElementById("input"));
-});
-
 // First function called after submit is clicked; it parses input, updates the visual inventory, & clears input box
-function getInput(form) {
+// Also, ARROW FUNCTION
+getInput = (form) => {
     // I use String method .toLowerCase() so that it is easier to compare user input with code values
     let input = form.inputBox.value.toLowerCase();
     parseInput(input);
@@ -214,7 +210,7 @@ function getInput(form) {
     form.reset();
 }
 
-// Arrow function used to add event listener that allows user to press ENTER to submit input without refreshing the page
+// Adds an event listener to the input box so user can press enter to parse input
 inputBox.addEventListener("keyup", (event) => {
     // preventDefault() used to not refresh the page
     event.preventDefault();
@@ -223,6 +219,12 @@ inputBox.addEventListener("keyup", (event) => {
     }
 });
 
+// This event handler is used to listen for the button to be clicked to parse the input
+inputSubmit.addEventListener("click", () => {
+    getInput(document.getElementById("input"));
+});
+
+// Clicking on help button will toggle help screen
 helpButton.addEventListener("click", () => {
     if (image.src === imgHelp.src) {
         parseInput("play");

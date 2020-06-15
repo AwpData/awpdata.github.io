@@ -28,6 +28,12 @@ let ownedRobots = 0;
 let x = null;
 let y = null;
 
+// Asks the user before they leave or refresh page
+window.onbeforeunload = function (e) {
+    e.returnValue = 'onbeforeunload';
+    return 'onbeforeunload';
+};
+
 // Does this forever to let helper CPS add to total
 setInterval(helperUpdate, 1000);
 
