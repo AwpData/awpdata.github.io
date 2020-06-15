@@ -25,9 +25,6 @@ let robotPrice = 1000;
 let robotFactor = 2;
 let ownedRobots = 0;
 
-let x = null;
-let y = null;
-
 // Asks the user before they leave or refresh page
 window.onbeforeunload = function (e) {
     e.returnValue = 'onbeforeunload';
@@ -51,6 +48,15 @@ clicker.addEventListener("click", () => {
     play("Sounds/Click.wav");
     checkForUpgrade();
     checkForHelperDisplay();
+});
+
+// Change cursor style when mouse hovers over the clickable object
+clicker.addEventListener("mouseover", () => {
+    document.body.style.cursor = "pointer";
+});
+
+clicker.addEventListener("mouseleave", () => {
+    document.body.style.cursor = "default"
 });
 
 // After animation finishes, remove the pulsate animation so it can be used again
@@ -260,7 +266,7 @@ function upgradeRobot(factor) {
 function popUpCPS() {
     let popUp = document.createElement("p");
     popUp.innerHTML = "+" + clickMultiplier;
-    // This just sets the x (left) and y (top) of where the
+    // This just sets the x (left) and y (top) of where the cursor is currently positioned
     popUp.style.left = event.clientX.toString() + "px";
     popUp.style.top = event.clientY.toString() + "px";
     clicker.appendChild(popUp);
