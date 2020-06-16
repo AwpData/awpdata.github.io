@@ -55,7 +55,7 @@ clicker.addEventListener("mouseover", () => {
     document.body.style.cursor = "pointer";
 });
 
-clicker.addEventListener("mouseleave", () => {
+clicker.addEventListener("mouseout", () => {
     document.body.style.cursor = "default"
 });
 
