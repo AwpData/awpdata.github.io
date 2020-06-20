@@ -7,6 +7,22 @@
     -webkit-user-select: none;
 }
 
+html {
+    border-left: green solid 200px;
+    border-right: green solid 200px;
+    height: 1100px;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+}
+
 div#header-box {
     background: papayawhip;
     border: 1px solid black;
@@ -15,14 +31,33 @@ div#header-box {
     width: 400px;
 }
 
+p#average {
+    font-weight: bold;
+    color: green;
+}
+
+div#scores {
+    border: 1px solid black;
+    padding: 10px;
+    background: papayawhip;
+    width: 200px;
+    margin: 0 auto;
+    box-shadow: black 1px 1px;
+}
+
+div#scores > p {
+    font-size: 19px;
+}
+
 div#click-box {
     background: #add8e6;
-    /*background: #f83737;*/
-    border: 1px solid black;
     padding: 20px;
     margin: 10px auto;
-    width: 400px;
-    height: 200px;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 p#click-status {
@@ -30,4 +65,9 @@ p#click-status {
     font-weight: bold;
     font-size: 48px;
     color: black;
+    display: contents;
+}
+
+p#subtext {
+    display: contents;
 }
