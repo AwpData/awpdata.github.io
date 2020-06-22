@@ -15,4 +15,12 @@ Owned Robots >= 25 = Smarter Robots (Doubles Robot CPS power)
 
 CPS Unlocks:
 
-Robots: 10 Cursors required 
+Robots: 10 Cursors required
+
+
+Change Notes:
+
+(6/21/20)
+    -Changed base cursor price to 50
+    -Changed robot base CPS to 4
+    -Added Auto Clickers (Base +50 CPS)

@@ -936,9 +936,9 @@ function loc7Statements(input) {
     else if (input === "forward" && !doorOpen) {
         dialog.innerHTML = "The door is not open";
     } else if (input === "power") {
-        if (!powerBoxOn) {
+        if (!powerOn) {
             dialog.innerHTML = "Indicator says power is off";
-        } else if (powerBoxOn) {
+        } else if (powerOn) {
             dialog.innerHTML = "Indicator says power is on";
         }
     } else {

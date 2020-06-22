@@ -16,14 +16,19 @@ let numOfUserClicks = 0;
 let cps = 0;
 
 let cursorCPS = document.getElementById("cursor");
-let cursorPrice = 100;
+let cursorPrice = 50;
 let cursorFactor = 1;
 let ownedCursors = 0;
 
 let robotCPS = document.getElementById("robot");
 let robotPrice = 1000;
-let robotFactor = 2;
+let robotFactor = 5;
 let ownedRobots = 0;
+
+let autoClickerCPS = document.getElementById("autoclicker");
+let autoClickerPrice = 10000;
+let autoClickerFactor = 50;
+let ownedAutoClickers = 0;
 
 // Asks the user before they leave or refresh page
 window.onbeforeunload = function (e) {
@@ -67,6 +72,8 @@ clicker.addEventListener("animationend", () => {
 
 // So javascript requires you to put stuff in functions??? (GOOGLE THIS)
 function checkForUpgrade() {
+
+    // User Click Upgrades
     if (total >= 100 && !checkUnlockedUpgrades("First Upgrade")) {
         new upgrade("First Upgrade", "Doubles click power", "500", "click", "2");
     }
@@ -76,17 +83,26 @@ function checkForUpgrade() {
     if (total >= 1000 && numOfUserClicks >= 5000 && !checkUnlockedUpgrades("Third Upgrade")) {
         new upgrade("Third Upgrade", "Doubles click power again!", "10000", "click", "2");
     }
+
+    // Cursor Upgrades
     if (ownedCursors >= 10 && !checkUnlockedUpgrades("Double Cursors")) {
         new upgrade("Double Cursors", "Doubles CPS of Cursors", "1000", "cursor", "2");
     }
     if (ownedCursors >= 25 && !checkUnlockedUpgrades("Quad Cursors")) {
         new upgrade("Quad Cursors", "Doubles CPS of Cursors", "15000", "cursor", "2");
     }
+
+    // Robot Upgrades
     if (ownedRobots >= 10 && !checkUnlockedUpgrades("More Efficient Robots")) {
         new upgrade("More Efficient Robots", "Doubles CPS of Robots", "10000", "robot", "2");
     }
     if (ownedRobots >= 25 && !checkUnlockedUpgrades("Smarter Robots")) {
         new upgrade("Smarter Robots", "Doubles CPS of Robots", "50000", "robot", "2");
+    }
+
+    // Auto Clicker Upgrades
+    if (ownedAutoClickers >= 10 && !checkUnlockedUpgrades("Premium Auto Clickers")) {
+        new upgrade("Premium Auto Clickers", "Doubles CPS of Auto Clickers", "100000", "autoClicker", "2");
     }
 }
 
@@ -94,6 +110,9 @@ function checkForUpgrade() {
 function checkForHelperDisplay() {
     if (ownedCursors >= 10) {
         robotCPS.style.display = "block";
+    }
+    if (ownedRobots >= 15) {
+        autoClickerCPS.style.display = "block";
     }
 }
 
@@ -150,6 +169,19 @@ robotCPS.addEventListener("click", () => {
     }
 });
 
+autoClickerCPS.addEventListener("click", () => {
+    if (total >= autoClickerPrice) {
+        cps += autoClickerFactor;
+        ownedAutoClickers++;
+        total -= autoClickerPrice;
+        autoClickerPrice = Math.floor(autoClickerPrice *= 1.2);
+        document.getElementById("autoclicker-count").innerHTML = ownedAutoClickers.toLocaleString() + " owned";
+        document.getElementById("autoclicker-price").innerHTML = "Cost: " + autoClickerPrice.toLocaleString() + " clicks";
+        counter.innerHTML = total + " clicks";
+        play("Sounds/CPSBought.wav");
+    }
+});
+
 
 // This will constantly check if helpers are buyable by changing their color when ready
 function checkBuyable() {
@@ -162,6 +194,11 @@ function checkBuyable() {
         robotCPS.style.background = "green";
     } else {
         robotCPS.style.background = "#ff3333"
+    }
+    if (total >= autoClickerPrice) {
+        autoClickerCPS.style.background = "green";
+    } else {
+        autoClickerCPS.style.background = "#ff3333"
     }
 }
 
@@ -223,6 +260,8 @@ class upgrade {
                     upgradeCursor(this.getFactor());
                 } else if (this.getPowerUpType() === "robot") {
                     upgradeRobot(this.getFactor());
+                } else if (this.getPowerUpType() === "autoClicker") {
+                    upgradeAutoClicker(this.getFactor());
                 }
                 // Brings a pop up of what upgrade you just bought briefly
                 let upgradeBoughtPopUp = document.getElementById("popup");
@@ -250,15 +289,22 @@ function upgradeCursor(factor) {
     // I have to subtract the already owned cursors multiplier from cps before adding it again
     cps -= (cursorFactor * ownedCursors);
     cursorFactor *= factor;
-    document.getElementById("cursor-current-CPS").innerHTML = "+" + factor.toLocaleString() + " CPS";
+    document.getElementById("cursor-current-CPS").innerHTML = "+" + cursorFactor.toLocaleString() + " CPS";
     cps += (cursorFactor * ownedCursors);
 }
 
 function upgradeRobot(factor) {
     cps -= (robotFactor * ownedRobots);
     robotFactor *= factor;
-    document.getElementById("robot-current-CPS").innerHTML = "+" + factor.toLocaleString() + " CPS";
+    document.getElementById("robot-current-CPS").innerHTML = "+" + robotFactor.toLocaleString() + " CPS";
     cps += (robotFactor * ownedRobots);
+}
+
+function upgradeAutoClicker(factor) {
+    cps -= (autoClickerFactor * ownedAutoClickers);
+    autoClickerFactor *= factor;
+    document.getElementById("autoclicker-current-CPS").innerHTML = "+" + autoClickerFactor.toLocaleString() + " CPS";
+    cps += (autoClickerFactor * ownedAutoClickers);
 }
 
 // This pops up the cp of the mouse when the clicker is clicked
