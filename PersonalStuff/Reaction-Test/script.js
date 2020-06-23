@@ -33,7 +33,7 @@ clickBox.addEventListener("click", () => {
         clickBox.style.background = "#d3ef00";
         clickStatus = "blue"; // not really blue box but this is just for status
         subtext.innerHTML = "Click to try again";
-        clickMessage.innerHTML = time + " ms";
+        clickMessage.innerHTML = time.toLocaleString() + " ms";
     } else if (clickStatus === "blue") {
         clickBox.style.background = "#f83737";
         clickStatus = "red";
@@ -61,30 +61,29 @@ function changeToGreen() {
     clickMessage.innerHTML = "Click!";
     startUserTimer = Date.now();
 
-    console.log("Started user timer: " + startUserTimer); // TESTING PURPOSES
+    console.log("Started user timer: " + startUserTimer.toLocaleString()); // TESTING PURPOSES
 }
 
 function getScore() {
     stopUserTimer = Date.now(); // "Stops" the timer
     clearTimeout(waitTimer); // Just in case there are multiple sessions running, it stops them
     // FIND A WORKAROUND FOR -50 FOR MORE ACCURATE TIMING
-    time = (stopUserTimer - startUserTimer - 50).toLocaleString(); // Calculates the time it took for use to click
-    console.log ("Time: " + time);
+    time = (stopUserTimer - startUserTimer - 50); // Calculates the time it took for use to click
+    console.log("Time: " + time.toLocaleString());
     numOfSuccesses++; // Tracks number of successful games (for average)
-    totalTime += Math.round(parseInt(time)); // Gets the total time of all clicks (for average)
-    averages.innerHTML = "Average Time: " + Math.round(totalTime / numOfSuccesses) + " ms"; // Gets average num of clicks
+    totalTime += Math.round(time); // Gets the total time of all clicks (for average)
+    averages.innerHTML = "Average Time: " + Math.round(totalTime / numOfSuccesses).toLocaleString() + " ms"; // Gets average num of clicks
 
     scores.push(time); // Pushes time to score array for printing
     sortScores(); // Sorts the scores
     displayScore(); // Then displays them
 
-    console.log("Stopped user timer: " + stopUserTimer); // TESTING PURPOSES
+    console.log("Stopped user timer: " + stopUserTimer.toLocaleString()); // TESTING PURPOSES
     console.log(numOfSuccesses + " successes") // TESTING PURPOSES
-    console.log(totalTime + " total time"); // TESTING PURPOSES
+    console.log(totalTime.toLocaleString() + " total time"); // TESTING PURPOSES
 }
 
 // I used selection sort to sort users top 10 scores
-// BUG: 2 DIGITS ARE NOT BEING SORTED ?
 function sortScores() {
     for (let i = 0; i < scores.length - 1; i++) {
         let minIndex = i;
@@ -107,7 +106,7 @@ function displayScore() {
             break;
         }
         let score = document.createElement("p");
-        score.innerHTML = (i + 1) + ". " + scores[i] + " ms";
+        score.innerHTML = (i + 1) + ". " + scores[i].toLocaleString() + " ms";
         scoreTable.appendChild(score);
     }
 }
