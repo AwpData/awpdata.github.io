@@ -1,5 +1,5 @@
 * {
-    font-family: Helvetica, Ariel, serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     text-align: center;
 }
@@ -102,12 +102,13 @@ th {
 
 a {
     text-decoration: none;
-    font-family: Helvetica, serif;
+    font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, red, black);
     -webkit-background-clip: text;
     color: transparent;
     animation: text_gradient_effect 6s ease-in-out infinite;
     background-size: 400% 100%;
+    font-size: 20px;
 }
 
 a:hover {
