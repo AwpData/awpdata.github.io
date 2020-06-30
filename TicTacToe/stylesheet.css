@@ -1,0 +1,49 @@
+* {
+    font-family: 'Roboto', serif;
+}
+
+html {
+    border-left: 250px solid green;
+    border-right: 250px solid green;
+    height: 1500px;
+    overflow: auto;
+}
+
+div#header-box {
+    text-align: center;
+    margin: 10px auto;
+    border: 1px solid black;
+    width: 300px;
+    background: papayawhip;
+}
+
+div#game-box {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
+    margin: 10px auto;
+
+    border: 1px solid black;
+    background: lightgrey;
+}
+
+div#game-box > div {
+    text-align: center;
+    font-weight: bold;
+    padding: 50px;
+    border: 1px solid black;
+    width: 10px;
+    height: 25px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: blue;
+}

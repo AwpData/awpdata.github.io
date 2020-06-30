@@ -28,6 +28,8 @@ div#grid-container > div {
     border: 1px solid black;
     padding: 40px;
     background-color: #d5d5d5;
+    width: 10px;
+    height: 20px;
 }
 
 /*div#flex-container {
