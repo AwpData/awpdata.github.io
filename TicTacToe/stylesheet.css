@@ -1,5 +1,9 @@
 * {
     font-family: 'Roboto', serif;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 html {
@@ -33,6 +37,7 @@ div#game-box {
 div#game-box > div {
     text-align: center;
     font-weight: bold;
+    color: red;
     padding: 50px;
     border: 1px solid black;
     width: 10px;
