@@ -28,6 +28,7 @@ div#game-box {
     justify-content: center;
     align-content: center;
     width: fit-content;
+    width: -moz-fit-content; /* firefox width fit-content support */
     margin: 10px auto;
 
     border: 1px solid black;
