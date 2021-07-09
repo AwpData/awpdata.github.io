@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="cssExamples1" />
     <orderEntry type="module" module-name="HTMLerrors" />
     <orderEntry type="module" module-name="TextAdventureGameExample" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>

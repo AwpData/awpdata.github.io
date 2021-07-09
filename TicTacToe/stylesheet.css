@@ -45,6 +45,14 @@ div#game-box > div {
     height: 25px;
 }
 
+p#currentPlayer {
+    color: blue;
+    text-align: center;
+    margin: 20px auto;
+    font-weight: bold;
+    font-size: 24px;
+}
+
 a {
     text-decoration: none;
     font-weight: bold;

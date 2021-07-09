@@ -313,8 +313,8 @@ function popUpCPS() {
     let popUp = document.createElement("p");
     popUp.innerHTML = "+" + clickMultiplier;
     // This just sets the x (left) and y (top) of where the cursor is currently positioned
-    popUp.style.left = event.clientX.toString() + "px";
-    popUp.style.top = event.clientY.toString() + "px";
+    popUp.style.left = event.pageX.toString() + "px";
+    popUp.style.top = event.pageY.toString() + "px";
     clicker.appendChild(popUp);
     popUp.classList.add("showCPS");
     popUp.addEventListener("animationend", () => {
